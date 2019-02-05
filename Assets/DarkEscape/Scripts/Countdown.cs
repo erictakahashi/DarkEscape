@@ -7,9 +7,11 @@ public class Countdown : MonoBehaviour {
 	public float countdownTime;
 	public UnityEngine.UI.Text countdownText;
 
+	private float currCountdownValue;
+
 	// Use this for initialization
 	void Start () {
-		countdownText.text = "" + countdownTime + "";
+		
 	}
 	
 	// Update is called once per frame
@@ -18,7 +20,7 @@ public class Countdown : MonoBehaviour {
 	}
 
 	public IEnumerator StartCountdown() {
-		float currCountdownValue = countdownTime;
+		currCountdownValue = countdownTime;
 		while (currCountdownValue > 0)
 		{
 			Debug.Log("Countdown: " + currCountdownValue);
