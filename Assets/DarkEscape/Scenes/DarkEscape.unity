@@ -185,8 +185,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1620897176}
-        m_MethodName: StartGame
+      - m_Target: {fileID: 797751313}
+        m_MethodName: videoPlay
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2129,6 +2129,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 797751312}
+  - component: {fileID: 797751313}
   m_Layer: 0
   m_Name: VideoPlayer
   m_TagString: Untagged
@@ -2151,6 +2152,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &797751313
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 797751311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e1bba1508224e947b02c965a90b264d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoObject: {fileID: 1342527163}
 --- !u!1 &799909914 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1611177160661120, guid: 403c5287030643a49b54211072a96622,
@@ -3617,7 +3630,7 @@ VideoPlayer:
   m_EnabledAudioTracks: 01
   m_DirectAudioMutes: 00
   m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 1
   m_WaitForFirstFrame: 1
@@ -5474,8 +5487,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1620897176}
-        m_MethodName: StartGame
+      - m_Target: {fileID: 797751313}
+        m_MethodName: videoPause
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
