@@ -23,7 +23,6 @@ public class Countdown : MonoBehaviour {
 		currCountdownValue = countdownTime;
 		while (currCountdownValue > 0)
 		{
-			Debug.Log("Countdown: " + currCountdownValue);
 			yield return new WaitForSeconds(1.0f);
 			currCountdownValue--;
 			countdownText.text = "" + currCountdownValue + "";

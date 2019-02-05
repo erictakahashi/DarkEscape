@@ -24,7 +24,7 @@ public class Desk : MonoBehaviour {
 		string wordCode = displayText01.text + displayText02.text + displayText03.text;
 
 		if (!isDrawerOpened && wordCode == "BAA") {
-			// Open drawer - 
+			// Open drawer
 			isDrawerOpened = true;
 			// Trigger open drawer animation
 			drawerStateMachine.SetBool("open", true);

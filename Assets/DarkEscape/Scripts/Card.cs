@@ -5,7 +5,6 @@ using UnityEngine;
 public class Card : MonoBehaviour {
 
 	public Animator 	cardStateMachine;
-	public GameObject 	lockKeyboard;
 
 	// Use this for initialization
 	void Start () {
@@ -27,7 +26,7 @@ public class Card : MonoBehaviour {
 
 	public void OnCardPointerClick () {
 		// Inform the Door Lock that the user has the card
-		lockKeyboard.GetComponent<LockKeyboard>().HasCard();
+		GlobalVariables.hasCard = true;
 
 		// Destroy the Card game object
 		Destroy (gameObject);

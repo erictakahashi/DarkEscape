@@ -9,12 +9,9 @@ public class LockKeyboard : MonoBehaviour {
 	public GameObject			card;
 	public UnityEngine.UI.Text 	displayText;
 
-	private bool 				hasCard;
-
 	// Use this for initialization
 	void Start () {
 		// User starts without the card
-		hasCard = false;
 		card.SetActive (false);
 		// Set initial text for the display - "OUT" = out of service
 		displayText.text = "OUT";
@@ -22,18 +19,23 @@ public class LockKeyboard : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (GlobalVariables.hasCard) {
+			// The user has the card now
+			card.SetActive (true);
+		}
+
 		// Get string in the display
 		string displayedCode = displayText.text;
 
-		 if (hasCard && displayedCode == "OUT") {
+		 if (GlobalVariables.hasCard && displayedCode == "OUT") {
 			displayText.text = "";
-		} else if (hasCard && displayedCode == "1030") {
+		} else if (GlobalVariables.hasCard && displayedCode == "1030") {
 			displayText.text = "COOL";
 		}
 	}
 
 	public void KeyPressed () {
-		if (hasCard) {
+		if (GlobalVariables.hasCard) {
 			// Get the button pressed
 			GameObject button = EventSystem.current.currentSelectedGameObject;
 			// Get the number string of the button
@@ -46,12 +48,6 @@ public class LockKeyboard : MonoBehaviour {
 			// Append the string
 			displayText.text += number;
 		}
-	}
-
-	public void HasCard () {
-		// The user has the card now
-		hasCard = true;
-		card.SetActive (true);
 	}
 
 }
