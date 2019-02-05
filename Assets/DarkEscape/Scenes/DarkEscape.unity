@@ -2130,7 +2130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 797751312}
   m_Layer: 0
-  m_Name: ViddeoPlayer
+  m_Name: VideoPlayer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4629,7 +4629,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cardStateMachine: {fileID: 1791880525}
-  lockKeyboard: {fileID: 799909914}
 --- !u!95 &1791880525
 Animator:
   serializedVersion: 3
