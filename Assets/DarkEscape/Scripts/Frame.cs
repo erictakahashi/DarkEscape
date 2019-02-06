@@ -17,6 +17,8 @@ public class Frame : MonoBehaviour {
 	}
 
 	public void onClick () {
-		frame.GetComponent<Rigidbody>().useGravity = true;
+		if (GlobalVariables.gameStarted) {
+			frame.GetComponent<Rigidbody>().useGravity = true;
+		}
 	}
 }

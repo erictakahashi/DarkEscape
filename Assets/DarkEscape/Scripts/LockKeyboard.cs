@@ -35,7 +35,7 @@ public class LockKeyboard : MonoBehaviour {
 	}
 
 	public void KeyPressed () {
-		if (GlobalVariables.hasCard) {
+		if (GlobalVariables.gameStarted && GlobalVariables.hasCard) {
 			// Get the button pressed
 			GameObject button = EventSystem.current.currentSelectedGameObject;
 			// Get the number string of the button

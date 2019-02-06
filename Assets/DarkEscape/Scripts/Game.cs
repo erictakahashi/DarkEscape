@@ -18,9 +18,10 @@ public class Game : MonoBehaviour {
 	}
 
 	public void StartGame () {
+		// Set game started
+		GlobalVariables.gameStarted = true;
 		// Hide Intro panel
 		introductionPanel.SetActive (false);
-
 		// Start Countdown
 		StartCoroutine (countdown.GetComponent<Countdown>().StartCountdown ());
 	}

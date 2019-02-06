@@ -19,11 +19,15 @@ public class Video : MonoBehaviour {
 	}
 
 	public void videoPlay () {
-		videoPlayer.Play ();
+		if (GlobalVariables.gameStarted) {
+			videoPlayer.Play ();
+		}
 	}
 
 	public void videoPause () {
-		videoPlayer.Pause ();
+		if (GlobalVariables.gameStarted) {
+			videoPlayer.Pause ();
+		}
 	}
 
 }

@@ -17,15 +17,19 @@ public class DeskKeyboard : MonoBehaviour {
 	}
 
 	public void UpKeyPressed () {
-		char currentLetter 	= displayText.text.ToCharArray () [0];
-		currentLetter 		= (currentLetter == 'Z') ? 'A' : (char)(currentLetter + 1);
-		displayText.text 	= currentLetter.ToString ();
+		if (GlobalVariables.gameStarted) {
+			char currentLetter 	= displayText.text.ToCharArray () [0];
+			currentLetter 		= (currentLetter == 'Z') ? 'A' : (char)(currentLetter + 1);
+			displayText.text 	= currentLetter.ToString ();
+		}
 	}
 
 	public void DownKeyPressed () {
-		char currentLetter 	= displayText.text.ToCharArray () [0];
-		currentLetter 		= (currentLetter == 'A') ? 'Z' : (char)(currentLetter - 1);
-		displayText.text 	= currentLetter.ToString ();
+		if (GlobalVariables.gameStarted) {
+			char currentLetter 	= displayText.text.ToCharArray () [0];
+			currentLetter 		= (currentLetter == 'A') ? 'Z' : (char)(currentLetter - 1);
+			displayText.text 	= currentLetter.ToString ();
+		}
 	}
 
 }
