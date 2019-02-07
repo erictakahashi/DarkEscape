@@ -34,6 +34,8 @@ public class LockKeyboard : MonoBehaviour {
 			displayText.text = "COOL";
 			// Trigger open door animation
 			doorStateMachine.SetBool("open", true);
+			// Set game completed
+			GlobalVariables.gameCompleted = true;
 		}
 	}
 

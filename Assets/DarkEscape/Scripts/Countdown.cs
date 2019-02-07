@@ -21,7 +21,7 @@ public class Countdown : MonoBehaviour {
 
 	public IEnumerator StartCountdown() {
 		currCountdownValue = countdownTime;
-		while (currCountdownValue > 0)
+		while (currCountdownValue > 0 && !GlobalVariables.gameCompleted)
 		{
 			yield return new WaitForSeconds(1.0f);
 			currCountdownValue--;
