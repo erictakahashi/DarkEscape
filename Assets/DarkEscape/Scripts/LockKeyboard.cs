@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class LockKeyboard : MonoBehaviour {
 
 	public Animator 			lockStateMachine;
+	public Animator 			doorStateMachine;
 	public GameObject			card;
 	public UnityEngine.UI.Text 	displayText;
 
@@ -27,10 +28,12 @@ public class LockKeyboard : MonoBehaviour {
 		// Get string in the display
 		string displayedCode = displayText.text;
 
-		 if (GlobalVariables.hasCard && displayedCode == "OUT") {
+		if (GlobalVariables.hasCard && displayedCode == "OUT") {
 			displayText.text = "";
 		} else if (GlobalVariables.hasCard && displayedCode == "1030") {
 			displayText.text = "COOL";
+			// Trigger open door animation
+			doorStateMachine.SetBool("open", true);
 		}
 	}
 
