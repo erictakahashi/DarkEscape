@@ -16,6 +16,7 @@ public class LockKeyboard : MonoBehaviour {
 		card.SetActive (false);
 		// Set initial text for the display - "OUT" = out of service
 		displayText.text = "OUT";
+		displayText.color = new Color(201f/255f, 59f/255f, 59f/255f);
 	}
 	
 	// Update is called once per frame
@@ -31,7 +32,8 @@ public class LockKeyboard : MonoBehaviour {
 		if (GlobalVariables.hasCard && displayedCode == "OUT") {
 			displayText.text = "";
 		} else if (GlobalVariables.hasCard && displayedCode == "1030") {
-			displayText.text = "COOL";
+			displayText.text = "PASS";
+			displayText.color = new Color(91f/255f, 251f/255f, 85f/255f);
 			// Trigger open door animation
 			doorStateMachine.SetBool("open", true);
 			// Set game completed
