@@ -5,8 +5,8 @@ using UnityEngine.EventSystems;
 
 public class LockKeyboard : MonoBehaviour {
 
-	public Animator 			lockStateMachine;
-	public Animator 			doorStateMachine;
+	public Animator				lockStateMachine;
+	public Animator				doorStateMachine;
 	public GameObject			card;
 	public UnityEngine.UI.Text 	displayText;
 
@@ -42,7 +42,7 @@ public class LockKeyboard : MonoBehaviour {
 	}
 
 	public void KeyPressed () {
-		if (GlobalVariables.gameStarted && GlobalVariables.hasCard) {
+		if (GlobalVariables.gameStarted && GlobalVariables.hasCard && !GlobalVariables.gameOver) {
 			// Get the button pressed
 			GameObject button = EventSystem.current.currentSelectedGameObject;
 			// Get the number string of the button

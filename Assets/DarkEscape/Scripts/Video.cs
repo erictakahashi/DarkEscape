@@ -7,7 +7,7 @@ public class Video : MonoBehaviour {
 	public 	GameObject						videoObject;
 
 	private UnityEngine.Video.VideoPlayer	videoPlayer;
-	private bool 							videoPlayedFirstTime;
+	private bool							videoPlayedFirstTime;
 
 	// Use this for initialization
 	void Start () {
@@ -21,7 +21,7 @@ public class Video : MonoBehaviour {
 	}
 
 	public void videoPlay () {
-		if (GlobalVariables.gameStarted) {
+		if (GlobalVariables.gameStarted && !GlobalVariables.gameOver) {
 			if (!videoPlayedFirstTime) {
 				videoPlayedFirstTime = true;
 				// Add 10 to Exploration Points
@@ -33,7 +33,7 @@ public class Video : MonoBehaviour {
 	}
 
 	public void videoPause () {
-		if (GlobalVariables.gameStarted) {
+		if (GlobalVariables.gameStarted && !GlobalVariables.gameOver) {
 			videoPlayer.Pause ();
 		}
 	}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Frame : MonoBehaviour {
 
-	public 	GameObject 	frame;
+	public 	GameObject	frame;
 	private bool		frameClickedFirstTime;
 
 	// Use this for initialization
@@ -19,7 +19,7 @@ public class Frame : MonoBehaviour {
 	}
 
 	public void onClick () {
-		if (GlobalVariables.gameStarted) {
+		if (GlobalVariables.gameStarted  && !GlobalVariables.gameOver) {
 			frame.GetComponent<Rigidbody>().useGravity = true;
 			if (!frameClickedFirstTime) {
 				frameClickedFirstTime = true;

@@ -17,7 +17,7 @@ public class DeskKeyboard : MonoBehaviour {
 	}
 
 	public void UpKeyPressed () {
-		if (GlobalVariables.gameStarted) {
+		if (GlobalVariables.gameStarted && !GlobalVariables.gameOver) {
 			char currentLetter 	= displayText.text.ToCharArray () [0];
 			currentLetter 		= (currentLetter == 'Z') ? 'A' : (char)(currentLetter + 1);
 			displayText.text 	= currentLetter.ToString ();
@@ -25,7 +25,7 @@ public class DeskKeyboard : MonoBehaviour {
 	}
 
 	public void DownKeyPressed () {
-		if (GlobalVariables.gameStarted) {
+		if (GlobalVariables.gameStarted && !GlobalVariables.gameOver) {
 			char currentLetter 	= displayText.text.ToCharArray () [0];
 			currentLetter 		= (currentLetter == 'A') ? 'Z' : (char)(currentLetter - 1);
 			displayText.text 	= currentLetter.ToString ();

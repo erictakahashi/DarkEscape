@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Card : MonoBehaviour {
 
-	public Animator 	cardStateMachine;
+	public Animator cardStateMachine;
 
 	// Use this for initialization
 	void Start () {

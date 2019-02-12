@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Desk : MonoBehaviour {
 
-	public Animator 			drawerStateMachine;
-	public GameObject 			drawer;
-	public UnityEngine.UI.Text 	displayText01;
-	public UnityEngine.UI.Text 	displayText02;
-	public UnityEngine.UI.Text 	displayText03;
+	public Animator				drawerStateMachine;
+	public GameObject			drawer;
+	public UnityEngine.UI.Text	displayText01;
+	public UnityEngine.UI.Text	displayText02;
+	public UnityEngine.UI.Text	displayText03;
 
-	private bool 				isDrawerOpened;
+	private bool				isDrawerOpened;
 
 	// Use this for initialization
 	void Start () {

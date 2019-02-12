@@ -8,6 +8,9 @@
 	// Indicates when the game is completed
 	public static bool gameCompleted = false;
 
+	// Indicates when the game is over
+	public static bool gameOver = false;
+
 	// Indicates the Exploration Points
 	public static float explorationPoints = 0;
 
