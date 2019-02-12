@@ -28,6 +28,8 @@ public class Desk : MonoBehaviour {
 			isDrawerOpened = true;
 			// Trigger open drawer animation
 			drawerStateMachine.SetBool("open", true);
+			// Add 10 to Exploration Points
+			GlobalVariables.explorationPoints += 10;
 		}
 	}
 

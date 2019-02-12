@@ -243,9 +243,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '10
-
-'
+  m_Text: 
 --- !u!222 &132542030
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -597,9 +595,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: '30
-
-'
+  m_Text: 
 --- !u!222 &163876371
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3054,7 +3050,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1620897176}
-        m_MethodName: StartGame
+        m_MethodName: RestartGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5471,6 +5467,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   introductionPanel: {fileID: 1033459121}
   countdown: {fileID: 1978917432}
+  completeGameExplorationPoints: {fileID: 132542029}
+  completeGameRemaingTime: {fileID: 163876370}
 --- !u!4 &1620897177
 Transform:
   m_ObjectHideFlags: 0

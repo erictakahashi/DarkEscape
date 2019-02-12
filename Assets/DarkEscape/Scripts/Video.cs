@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Video : MonoBehaviour {
 
-	public GameObject						videoObject;
+	public 	GameObject						videoObject;
 
 	private UnityEngine.Video.VideoPlayer	videoPlayer;
+	private bool 							videoPlayedFirstTime;
 
 	// Use this for initialization
 	void Start () {
 		videoPlayer = videoObject.GetComponent<UnityEngine.Video.VideoPlayer> ();
+		videoPlayedFirstTime = false;
 	}
 	
 	// Update is called once per frame
@@ -20,6 +22,12 @@ public class Video : MonoBehaviour {
 
 	public void videoPlay () {
 		if (GlobalVariables.gameStarted) {
+			if (!videoPlayedFirstTime) {
+				videoPlayedFirstTime = true;
+				// Add 10 to Exploration Points
+				GlobalVariables.explorationPoints += 10;
+			}
+
 			videoPlayer.Play ();
 		}
 	}

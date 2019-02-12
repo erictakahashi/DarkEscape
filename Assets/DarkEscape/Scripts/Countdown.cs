@@ -25,6 +25,7 @@ public class Countdown : MonoBehaviour {
 		{
 			yield return new WaitForSeconds(1.0f);
 			currCountdownValue--;
+			GlobalVariables.remainingTime = currCountdownValue;
 			countdownText.text = "" + currCountdownValue + "";
 		}
 	}

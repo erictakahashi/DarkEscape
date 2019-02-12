@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class Frame : MonoBehaviour {
 
-	public GameObject frame;
+	public 	GameObject 	frame;
+	private bool		frameClickedFirstTime;
 
 	// Use this for initialization
 	void Start () {
 		frame.GetComponent<Rigidbody>().useGravity = false;
+		frameClickedFirstTime = false;
 	}
 	
 	// Update is called once per frame
@@ -19,6 +21,11 @@ public class Frame : MonoBehaviour {
 	public void onClick () {
 		if (GlobalVariables.gameStarted) {
 			frame.GetComponent<Rigidbody>().useGravity = true;
+			if (!frameClickedFirstTime) {
+				frameClickedFirstTime = true;
+				// Add 10 to Exploration Points
+				GlobalVariables.explorationPoints += 10;
+			}
 		}
 	}
 }
