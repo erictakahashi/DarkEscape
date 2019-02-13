@@ -16,4 +16,13 @@
 
 	// Indicates the Remaining Time
 	public static float remainingTime = 0;
+
+	public static void ResetVariables () {
+		gameStarted 		= false;
+		hasCard 			= false;
+		gameCompleted 		= false;
+		gameOver 			= false;
+		explorationPoints 	= 0;
+		remainingTime 		= 0;
+	}
 }

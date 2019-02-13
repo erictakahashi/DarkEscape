@@ -50,6 +50,9 @@ public class Game : MonoBehaviour {
 
 	public void RestartGame() {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+		GlobalVariables.ResetVariables();
+		// Hide GameOver Panel
+		gameOverPanel.SetActive (false);
 	}
 
 	public void GameOver() {
