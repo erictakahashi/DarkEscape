@@ -7,6 +7,7 @@ public class LockKeyboard : MonoBehaviour {
 
 	public Animator				lockStateMachine;
 	public Animator				doorStateMachine;
+	public GameObject			lockKeyboard;
 	public GameObject			card;
 	public UnityEngine.UI.Text 	displayText;
 
@@ -54,7 +55,14 @@ public class LockKeyboard : MonoBehaviour {
 			}
 			// Append the string
 			displayText.text += number;
+			// Play audio source
+			PlayAudioSource ();
 		}
+	}
+
+	private void PlayAudioSource () {
+		AudioSource audioSource = lockKeyboard.GetComponent<AudioSource>();
+		audioSource.Play();
 	}
 
 }
