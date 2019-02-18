@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class DeskKeyboard : MonoBehaviour {
 
-	public UnityEngine.UI.Text displayText;
+	public GameObject			deskKeyboard;
+	public UnityEngine.UI.Text	displayText;
 
 	// Use this for initialization
 	void Start () {
@@ -21,6 +22,8 @@ public class DeskKeyboard : MonoBehaviour {
 			char currentLetter 	= displayText.text.ToCharArray () [0];
 			currentLetter 		= (currentLetter == 'Z') ? 'A' : (char)(currentLetter + 1);
 			displayText.text 	= currentLetter.ToString ();
+			// Play audio source
+			PlayAudioSource ();
 		}
 	}
 
@@ -29,7 +32,14 @@ public class DeskKeyboard : MonoBehaviour {
 			char currentLetter 	= displayText.text.ToCharArray () [0];
 			currentLetter 		= (currentLetter == 'A') ? 'Z' : (char)(currentLetter - 1);
 			displayText.text 	= currentLetter.ToString ();
+			// Play audio source
+			PlayAudioSource ();
 		}
+	}
+
+	private void PlayAudioSource () {
+		AudioSource audioSource = deskKeyboard.GetComponentInChildren<AudioSource>();
+		audioSource.Play();
 	}
 
 }
