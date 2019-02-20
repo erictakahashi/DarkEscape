@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Card : MonoBehaviour {
 
-	public Animator cardStateMachine;
+	public Animator		cardStateMachine;
+	public GameObject	AudioSource;
 
 	// Use this for initialization
 	void Start () {
@@ -30,6 +31,13 @@ public class Card : MonoBehaviour {
 
 		// Destroy the Card game object
 		Destroy (gameObject);
+		// Play audio source
+		PlayAudioSource ();
+	}
+
+	private void PlayAudioSource () {
+		AudioSource audioSource = AudioSource.GetComponent<AudioSource>();
+		audioSource.Play();
 	}
 
 }
