@@ -36,12 +36,11 @@ public class Desk : MonoBehaviour {
 	}
 
 	public IEnumerator PlayAudioSource () {
-		float currCountdownValue = 1;
-		while (currCountdownValue > 0)
+		float audioBuffer = 1;
+		while (audioBuffer > 0)
 		{
-			Debug.Log("audio");
 			yield return new WaitForSeconds(0.5f);
-			currCountdownValue--;
+			audioBuffer--;
 			AudioSource audioSource = drawer.GetComponent<AudioSource>();
 			audioSource.Play();
 		}
