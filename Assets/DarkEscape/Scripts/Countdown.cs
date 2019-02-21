@@ -19,7 +19,7 @@ public class Countdown : MonoBehaviour {
 		
 	}
 
-	public IEnumerator StartCountdown() {
+	public IEnumerator StartCountdown () {
 		currCountdownValue = countdownTime;
 		while (currCountdownValue > 0 && !GlobalVariables.gameCompleted)
 		{

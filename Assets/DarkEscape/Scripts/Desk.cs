@@ -30,6 +30,20 @@ public class Desk : MonoBehaviour {
 			drawerStateMachine.SetBool("open", true);
 			// Add 10 to Exploration Points
 			GlobalVariables.explorationPoints += 10;
+			// Play audio source
+			StartCoroutine (PlayAudioSource ());
+		}
+	}
+
+	public IEnumerator PlayAudioSource () {
+		float currCountdownValue = 1;
+		while (currCountdownValue > 0)
+		{
+			Debug.Log("audio");
+			yield return new WaitForSeconds(0.5f);
+			currCountdownValue--;
+			AudioSource audioSource = drawer.GetComponent<AudioSource>();
+			audioSource.Play();
 		}
 	}
 
