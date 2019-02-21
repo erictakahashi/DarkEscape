@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Video : MonoBehaviour {
 
-	public 	GameObject						videoObject;
+	public	GameObject						videoObject;
+	public	GameObject						videoControls;
 
 	private UnityEngine.Video.VideoPlayer	videoPlayer;
 	private bool							videoPlayedFirstTime;
@@ -29,13 +30,22 @@ public class Video : MonoBehaviour {
 			}
 
 			videoPlayer.Play ();
+			// Play audio source
+			PlayAudioSource ();
 		}
 	}
 
 	public void videoPause () {
 		if (GlobalVariables.gameStarted && !GlobalVariables.gameOver) {
 			videoPlayer.Pause ();
+			// Play audio source
+			PlayAudioSource ();
 		}
+	}
+
+	private void PlayAudioSource () {
+		AudioSource audioSource = videoControls.GetComponent<AudioSource>();
+		audioSource.Play();
 	}
 
 }
