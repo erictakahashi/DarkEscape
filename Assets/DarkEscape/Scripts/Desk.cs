@@ -35,11 +35,11 @@ public class Desk : MonoBehaviour {
 		}
 	}
 
-	public IEnumerator PlayAudioSource () {
+	private IEnumerator PlayAudioSource () {
 		float audioBuffer = 1;
 		while (audioBuffer > 0)
 		{
-			yield return new WaitForSeconds(0.5f);
+			yield return new WaitForSeconds(0.3f);
 			audioBuffer--;
 			AudioSource audioSource = drawer.GetComponent<AudioSource>();
 			audioSource.Play();
