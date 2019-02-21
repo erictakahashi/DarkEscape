@@ -25,7 +25,21 @@ public class Frame : MonoBehaviour {
 				frameClickedFirstTime = true;
 				// Add 10 to Exploration Points
 				GlobalVariables.explorationPoints += 10;
+				// Play audio source
+				StartCoroutine (PlayAudioSource ());
 			}
 		}
 	}
+
+	private IEnumerator PlayAudioSource () {
+		float audioBuffer = 1;
+		while (audioBuffer > 0)
+		{
+			yield return new WaitForSeconds(0.3f);
+			audioBuffer--;
+			AudioSource audioSource = frame.GetComponent<AudioSource>();
+			audioSource.Play();
+		}
+	}
+
 }
