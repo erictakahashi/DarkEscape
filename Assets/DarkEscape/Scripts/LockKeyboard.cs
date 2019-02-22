@@ -5,8 +5,6 @@ using UnityEngine.EventSystems;
 
 public class LockKeyboard : MonoBehaviour {
 
-	public Animator				lockStateMachine;
-	public Animator				doorStateMachine;
 	public GameObject			lockKeyboard;
 	public GameObject			card;
 	public UnityEngine.UI.Text 	displayText;
@@ -35,8 +33,6 @@ public class LockKeyboard : MonoBehaviour {
 		} else if (GlobalVariables.hasCard && displayedCode == "1030") {
 			displayText.text = "PASS";
 			displayText.color = new Color(91f/255f, 251f/255f, 85f/255f);
-			// Trigger open door animation
-			doorStateMachine.SetBool("open", true);
 			// Set game completed
 			GlobalVariables.gameCompleted = true;
 		}
