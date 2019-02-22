@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Game : MonoBehaviour {
 
-	public GameObject			introductionPanel;
-	public GameObject			gameOverPanel;
+	public GameObject			buttonAudioSource;
 	public GameObject			countdown;
+	public GameObject			gameOverPanel;
+	public GameObject			introductionPanel;
 	public UnityEngine.UI.Text	completeGameExplorationPoints;
 	public UnityEngine.UI.Text	completeGameRemaingTime;
 
@@ -46,17 +47,27 @@ public class Game : MonoBehaviour {
 		introductionPanel.SetActive (false);
 		// Start Countdown
 		StartCoroutine (countdown.GetComponent<Countdown>().StartCountdown ());
+		// Play audio source
+		PlayAudioSource ();
 	}
 
-	public void RestartGame() {
+	public void RestartGame () {
 		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		GlobalVariables.ResetVariables();
 		// Hide GameOver Panel
 		gameOverPanel.SetActive (false);
+		// Play audio source
+		PlayAudioSource ();
 	}
 
 	public void GameOver() {
 		// Display GameOver Panel
 		gameOverPanel.SetActive (true);
 	}
+
+	private void PlayAudioSource () {
+		AudioSource audioSource = buttonAudioSource.GetComponent<AudioSource>();
+		audioSource.Play();
+	}
+
 }
