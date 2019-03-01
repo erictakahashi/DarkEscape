@@ -23,7 +23,7 @@ public class Desk : MonoBehaviour {
 		// Get the code - sum text of all displays
 		string wordCode = displayText01.text + displayText02.text + displayText03.text;
 
-		if (!isDrawerOpened && wordCode == "BAA") {
+		if (!isDrawerOpened && wordCode == "USA") {
 			// Open drawer
 			isDrawerOpened = true;
 			// Trigger open drawer animation
