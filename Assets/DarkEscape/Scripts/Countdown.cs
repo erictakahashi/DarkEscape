@@ -30,9 +30,10 @@ public class Countdown : MonoBehaviour {
 			//Set countdown panel text
 			countdownText.text = "" + currCountdownValue + "";
 
-			// Change light intensity
-			lightIntensity = lightIntensity - 0.01f;
-			light.GetComponent<Light>().intensity = lightIntensity;
+			// Change light intensity - Optional
+			// lightIntensity = lightIntensity - 0.01f;
+			// light.GetComponent<Light>().intensity = lightIntensity;
+
 			// Set Remaining Time
 			GlobalVariables.remainingTime = currCountdownValue;
 			// Set Game Over when time is zero
