@@ -14,6 +14,7 @@ public class Video : MonoBehaviour {
 	void Start () {
 		videoPlayer = videoObject.GetComponent<UnityEngine.Video.VideoPlayer> ();
 		videoPlayedFirstTime = false;
+		StartCoroutine (VideoInitialization ());
 	}
 	
 	// Update is called once per frame
@@ -46,6 +47,17 @@ public class Video : MonoBehaviour {
 	private void PlayAudioSource () {
 		AudioSource audioSource = videoControls.GetComponent<AudioSource>();
 		audioSource.Play();
+	}
+
+	private IEnumerator VideoInitialization () {
+		videoPlayer.Play ();
+		float buffer = 1;
+		while (buffer > 0)
+		{
+			yield return new WaitForSeconds(0.3f);
+			buffer--;
+			videoPlayer.Pause ();
+		}
 	}
 
 }
